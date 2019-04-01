@@ -122,7 +122,7 @@ void printData() {
   Serial.print(",");
   Serial.print("\t");*/
   //Serial.print(gForceZ);
-  Serial.print(accelX);           //accelZ
+  Serial.print(accelZ);           //accelZ
   Serial.println(",");
   /*Serial.print("\t");
   Serial.print(rotX);

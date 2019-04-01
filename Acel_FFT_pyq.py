@@ -58,7 +58,7 @@ guarda = 500             # Buffer for the FFT, higher value equals better resolu
 r = range(0, int(freq/2+1), int(freq/guarda))
 
 win = pg.GraphicsWindow()
-win.setWindowTitle('Espectrum')
+win.setWindowTitle('Spectrum')
 pg.setConfigOption('foreground', 'w')
 
 p1 = win.addPlot(
