@@ -1,6 +1,6 @@
 ## Accelerometer-FFT---Real-time
 
-### Program tested with Python and Arduino/STM32 with sampling rates up to 2000Hz
+### Code tested with Python and Arduino/STM32 with sampling rates up to 2000Hz
 
 Video:
 
