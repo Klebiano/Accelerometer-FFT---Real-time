@@ -101,7 +101,9 @@ def update():
 
         acelerometrox = int(dataArray[0])/4096.0   # 16384, 8192, 4096, 2048 for accelerometer set 2, 4, 8, 16g
 
-        acelz.append(acelerometrox)
+        if acelerometrox != 0.0:
+            acelz.append(acelerometrox)
+            
 
         if i > guarda:
             try:
@@ -109,7 +111,7 @@ def update():
                 frequencia = np.fft.fftfreq(len(data), d=1/freq)
             except IOError:
                 pass
-            curve2.setData(frequencia[:int(guarda/2)], abs(np.real(data[:int(guarda/2)]))**3)
+            curve2.setData(frequencia[:int(guarda/2)], abs(np.real(data[:int(guarda/2)]))**2)
 
         curve1.setData(acelz)
         i += 1

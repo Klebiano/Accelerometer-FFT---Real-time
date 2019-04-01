@@ -115,7 +115,6 @@ void processGyroData() {
 
 void printData() {
 
-  
   /*Serial.print(gForceX);
   Serial.print(",");
   Serial.print("\t");
@@ -123,9 +122,8 @@ void printData() {
   Serial.print(",");
   Serial.print("\t");*/
   //Serial.print(gForceZ);
-  Serial.print(accelZ);
+  Serial.print(accelX);
   Serial.println(",");
-  Serial.flush();
   /*Serial.print("\t");
   Serial.print(rotX);
   Serial.print(",");
