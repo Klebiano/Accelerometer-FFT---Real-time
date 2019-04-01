@@ -62,7 +62,7 @@ win.setWindowTitle('Espectrum')
 pg.setConfigOption('foreground', 'w')
 
 p1 = win.addPlot(
-    title="<span style='color: #ffffff; font-weight: bold; font-size:20px'>Espectro do Klebs</span>")
+    title="<span style='color: #ffffff; font-weight: bold; font-size:20px'>Spectrum</span>")
 linha1 = pg.mkPen((0, 255, 0), width=2)  # style=QtCore.Qt.DashLine)
 linha2 = pg.mkPen((0, 0, 255), width=2)  # style=QtCore.Qt.DashLine)
 linha3 = pg.mkPen((255, 0, 0), width=2)  # style=QtCore.Qt.DashLine)
@@ -70,7 +70,7 @@ p1.addLegend(offset=(10, 5))
 
 curve1 = p1.plot(acelz,
                  pen=linha1,
-                 name="<span style='color: #ffffff; font-weight: bold; font-size: 12px'>Z</span>")
+                 name="<span style='color: #ffffff; font-weight: bold; font-size: 12px'>Z axis</span>")
 
 p1.setRange(yRange=[-3, 3])
 p1.setLabel('bottom',
@@ -99,11 +99,11 @@ def update():
         arduinoString = ReadLine(arduinoData)
         dataArray = arduinoString.readline().decode("utf-8").split(',')
 
-        acelerometrox = int(dataArray[0])/4096.0   # 16384, 8192, 4096, 2048 for accelerometer set 2, 4, 8, 16g
+        acelerometroz = int(dataArray[0])/4096.0   # 16384, 8192, 4096, 2048 for accelerometer set 2, 4, 8, 16g
 
-        if acelerometrox != 0.0:
-            acelz.append(acelerometrox)
-            
+        acelz.append(acelerometroz)
+        
+        #np.savetxt("Accelerometer-FFT---Real-time\Data\Data.csv", acelz, delimiter=",")
 
         if i > guarda:
             try:
