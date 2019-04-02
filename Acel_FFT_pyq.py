@@ -28,6 +28,7 @@ print(result)
 usb = input('Select the serial port: ')
 
 arduinoData = serial.Serial(usb, 115200)  # 115200
+arduinoData.flush()
 
 class ReadLine:
     def __init__(self, s):
@@ -86,7 +87,7 @@ curve2 = p2.plot(acelz,
                  pen=linha4,
                  name="<span style='color: #ffffff; font-weight: bold; font-size: 12px'>Amplitude</span>")
 
-p2.setRange(yRange=[0, 1000], xRange=[0, 500])
+p2.setRange(yRange=[0, 1000], xRange=[0, int(freq/2)])
 p2.setLabel('bottom',
             text="<span style='color: #ffffff; font-weight: bold; font-size: 12px'>Frequency (Hz)</span>")
 p2.showGrid(x=False, y=True)
@@ -95,20 +96,21 @@ i = 0
 
 def update():
     global i
+    frequencia = np.fft.fftfreq(guarda, d=1/freq)
     try:
+
         arduinoString = ReadLine(arduinoData)
         dataArray = arduinoString.readline().decode("utf-8").split(',')
 
-        acelerometroz = int(dataArray[0])/4096.0   # 16384, 8192, 4096, 2048 for accelerometer set 2, 4, 8, 16g
+        acelerometroz = int(dataArray[0])/4096.0  # 16384, 8192, 4096, 2048 for accelerometer set 2, 4, 8, 16g
 
         acelz.append(acelerometroz)
-        
+
         #np.savetxt("Accelerometer-FFT---Real-time\Data\Data.csv", acelz, delimiter=",")
 
         if i > guarda:
             try:
                 data = np.fft.fft(acelz[-guarda:])
-                frequencia = np.fft.fftfreq(len(data), d=1/freq)
             except IOError:
                 pass
             curve2.setData(frequencia[:int(guarda/2)], abs(np.real(data[:int(guarda/2)]))**2)
