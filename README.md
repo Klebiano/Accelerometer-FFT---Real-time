@@ -4,6 +4,7 @@
 
 Example:
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/cMDfzpV"><a href="//imgur.com/cMDfzpV"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![](\Accelerometer-FFT---Real-time\Data\output-gif.gif)
+
 
 <!--- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/RrSwNsAspU4/0.jpg)](https://www.youtube.com/watch?v=RrSwNsAspU4) --> 
