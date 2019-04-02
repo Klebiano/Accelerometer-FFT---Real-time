@@ -4,7 +4,7 @@
 
 Example:
 
-![](Ingles - Github\Accelerometer-FFT---Real-time\Data\output-gif.gif)
+![](https://media.giphy.com/media/RkoLKQzie2WmJbWq25/giphy.gif)
 
 
 <!--- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/RrSwNsAspU4/0.jpg)](https://www.youtube.com/watch?v=RrSwNsAspU4) --> 
