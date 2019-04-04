@@ -6,7 +6,6 @@ void setup() {
 
 }
 
-// you use a newline as the delimiter; no need to use a comma too
 void loop() {
   for(int d = 0; d < 360; d++){
     float resultado = 2.0*sin(DEG_TO_RAD * d*2*PI) + 3.0*sin(DEG_TO_RAD * d*2*PI*100.0);
