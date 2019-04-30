@@ -35,7 +35,7 @@ arduinoData = serial.Serial(usb, 115200)  # 115200
 
 freq = 2000              # 1/T
 guarda = 500             # 500
-#r = range(0, int(freq/2+1), int(freq/guarda))
+
 frequencia = np.linspace(0.0, 1.0/(2.0*(1/freq)), int(guarda/2))
 
 acelx = deque([], maxlen=guarda)
